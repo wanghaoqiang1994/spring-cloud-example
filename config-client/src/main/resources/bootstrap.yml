@@ -1,0 +1,14 @@
+#配置服务名称
+#访问的配置文件名称为
+#{application.name}/{profile}/{label}
+#${spring.application.name}-${spring.cloud.config.profile}-${spring.cloud.config.label}
+spring:
+  application:
+    name: config-client #服务名称
+  cloud:
+    config:
+      name: config-client #（当应用名跟配置文件相同时可以不用配置）
+      uri: http://localhost:8771 #配置服务的地址 application.yml
+      enabled: true #开启配置
+      profile: dev  #版本
+      label: master     #git配置的分支信息，master类似的

@@ -1,0 +1,18 @@
+server:
+  port: 8771 #服务端口
+
+spring:
+  application:
+    name: config-server #服务之间的调用都是根据这个 name
+  profiles:
+    active: native #设置为本地启动的方式，不是通过git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config #配置文件所在的路径，路径下的文件名称需要跟调用的应用名称前缀相同
+
+        #git:
+          #url:
+          #password:
+          #username:
